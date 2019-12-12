@@ -14,13 +14,30 @@
     <!--接口调用测试-->
     <div>信息：{{message}}</div>
 
-
-
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+<!--    <div id="nav">-->
+<!--      <router-link to="/">Home</router-link> |-->
+<!--      <router-link to="/about">About</router-link>-->
+<!--    </div>-->
     <router-view/>
+
+<!--    tabbar测试-->
+    <van-tabbar route>
+      <van-tabbar-item
+              replace
+              to="/"
+              icon="home-o"
+      >
+        标签
+      </van-tabbar-item>
+      <van-tabbar-item
+              replace
+              to="/about"
+              icon="search"
+      >
+        标签
+      </van-tabbar-item>
+    </van-tabbar>
+
 
   </div>
 </template>

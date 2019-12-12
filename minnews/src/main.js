@@ -10,7 +10,8 @@ import 'amfe-flexible'
 //引入 axios
 import axios from 'axios'
 Vue.prototype.axios = axios
-
+//引入 qs
+import qs from 'qs'
 
 
 Vue.config.productionTip = false
