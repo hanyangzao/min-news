@@ -21,8 +21,8 @@ Vue.config.productionTip = false
 //Vue.use(Vant);
 
 //按需引用vant
-import { Button,NumberKeyboard, Tabbar, TabbarItem } from 'vant'
-Vue.use(Button).use(NumberKeyboard).use(Tabbar).use(TabbarItem );
+import { Button,Toast,NumberKeyboard, Tabbar, TabbarItem } from 'vant'
+Vue.use(Button).use(Toast).use(NumberKeyboard).use(Tabbar).use(TabbarItem );
 
 new Vue({
   router,
