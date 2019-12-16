@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <van-nav-bar
-            title="标题"
+            :title="title"
+            :fixed="true"
 
     />
 
@@ -29,23 +30,20 @@
 <!--      <router-link to="/">Home</router-link> |-->
 <!--      <router-link to="/about">About</router-link>-->
 <!--    </div>-->
-    <router-view/>
-
+    <div class="main has_title has_tabbar">
+      <router-view/>
+    </div>
 <!--    tabbar测试-->
-    <van-tabbar route>
+    <van-tabbar v-model="active"  @change="ontabbarChange">
       <van-tabbar-item
-              replace
-              to="/"
               icon="home-o"
       >
         首页
       </van-tabbar-item>
       <van-tabbar-item
-              replace
-              to="/about"
-              icon="search"
+              icon="user-o"
       >
-        关于
+        我的
       </van-tabbar-item>
     </van-tabbar>
 
@@ -56,9 +54,11 @@
   export default {
     data() {
       return {
+        title:"首页",
         show: false,
         weather:'--',
-        temp:'--'
+        temp:'--',
+        active: '',
       }
     },
     methods:{
@@ -67,6 +67,22 @@
       },
       onDelete() {
         this.$toast('删除');
+      },
+      ontabbarChange(e){
+        console.log(e);
+        if (this.active === 0) {
+          this.title="首页";
+          this.$router.push({
+            path: '/',
+            replace: true
+          })
+        } else if (this.active === 1) {
+          this.title="我的";
+          this.$router.push({
+            path: '/profile',
+            replace: true
+          })
+        }
       }
     },
     created() {
@@ -83,7 +99,17 @@
         // 错误回调
       })
 
+    },
+    mounted () {
+      // 判断当前页面是否为home或profile页面
+      const CURRENTTABBAR = window.location.hash.split('/')[1]
+      if (CURRENTTABBAR === '') {
+        this.active = 0
+      } else if (CURRENTTABBAR === 'profile') {
+        this.active = 1
+      }
     }
+
   }
 </script>
 
@@ -99,6 +125,12 @@ html{
   .title{
     font-size: 24px;
     margin-bottom: 10px;
+  }
+  .has_title{
+    margin-top: 46px;
+  }
+  .has_tabbar{
+    margin-bottom: 50px;
   }
 }
 

@@ -21,10 +21,24 @@ Vue.config.productionTip = false
 //Vue.use(Vant);
 
 //按需引用vant
-import { NavBar,Button,Toast,NumberKeyboard,Tabbar,TabbarItem,Swipe,SwipeItem,NoticeBar,Panel, ContactCard, ContactList, ContactEdit} from 'vant'
-Vue.use(NavBar).use(Button).use(Toast).use(NumberKeyboard).use(Tabbar).use(TabbarItem ).use(Swipe).use(SwipeItem).use(NoticeBar).use(Panel) .use(ContactCard)
-    .use(ContactList)
-    .use(ContactEdit);
+import { NavBar,Button,Toast,NumberKeyboard,Tabbar,
+        TabbarItem,Swipe,SwipeItem,NoticeBar,Panel, ContactCard,
+        ContactList, ContactEdit,Grid, GridItem
+} from 'vant'
+Vue.use(NavBar).use(Button).use(Toast).use(NumberKeyboard)
+    .use(Tabbar).use(TabbarItem ).use(Swipe).use(SwipeItem)
+    .use(NoticeBar).use(Panel).use(ContactCard)
+    .use(ContactList).use(ContactEdit)
+    .use(Grid).use(GridItem)
+
+//路由守卫
+// router.beforeEach((to, from, next) => {
+//     if(to.meta.title){
+//         console.log(to.meta.title);
+//     }
+//     next();
+// });
+
 
 new Vue({
   router,
