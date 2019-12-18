@@ -22,10 +22,18 @@ const routes = [
           title:"我的"
         },
         //路由懒加载
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue')
       }
     ],
 
+  },
+  {
+    path: '/News',
+    component:()=>import(/* webpackChunkName: "about" */ '../views/News/newsList.vue')
+  },
+  {
+    path: '/NewsDetail',
+    component:()=>import(/* webpackChunkName: "about" */ '../views/News/newsDetail.vue')
   }
 ]
 
