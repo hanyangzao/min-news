@@ -26,17 +26,19 @@ Vue.config.productionTip = false
 //按需引用vant
 import { NavBar,Button,Toast,NumberKeyboard,Tabbar,
         TabbarItem,Swipe,SwipeItem,NoticeBar,Panel, ContactCard,
-        ContactList, ContactEdit,Grid, GridItem,Tab,Tabs,List, Cell,
-        Image,Lazyload,Loading,Icon,ImagePreview
+        ContactList, ContactEdit,Grid, GridItem,Tab,Tabs,List,Cell,CellGroup,
+        Image,Lazyload,Loading,Icon,ImagePreview,PullRefresh,Field, Tag
 
 } from 'vant'
 Vue.use(NavBar).use(Button).use(Toast).use(NumberKeyboard)
     .use(Tabbar).use(TabbarItem ).use(Swipe).use(SwipeItem)
     .use(NoticeBar).use(Panel).use(ContactCard)
     .use(ContactList).use(ContactEdit)
-    .use(Grid).use(GridItem).use(Tab).use(Tabs).use(List).use(Cell).use(Image)
-    .use(Lazyload).use(Loading).use(Icon).use(ImagePreview)
+    .use(Grid).use(GridItem).use(Tab).use(Tabs).use(List).use(Cell).use(CellGroup).use(Image)
+    .use(Lazyload).use(Loading).use(Icon).use(ImagePreview).use(PullRefresh).use(Field).use(Tag)
 
+//覆盖vant样式
+import './assets/css/resetVant.less'
 
 
 //路由守卫

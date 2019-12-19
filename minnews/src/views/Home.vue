@@ -36,7 +36,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style scoped lang="less">
     .van-swipe{
         margin-bottom: 6px;
         .van-swipe-item{
