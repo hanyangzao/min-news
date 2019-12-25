@@ -27,7 +27,7 @@ const routes = [
     ],
 
   },
-  {
+  {//新闻
     path: '/News',
     component:()=>import(/* webpackChunkName: "about" */ '../views/News/newsList.vue')
   },
@@ -35,9 +35,13 @@ const routes = [
     path: '/NewsDetail',
     component:()=>import(/* webpackChunkName: "about" */ '../views/News/newsDetail.vue')
   },
-  {
+  {//垃圾分类
     path: '/Rubbish',
     component:()=>import(/* webpackChunkName: "about" */ '../views/Rubbish/Rubbish.vue')
+  },
+  {//历史今日
+    path: '/todayHistory',
+    component:()=>import(/* webpackChunkName: "about" */ '../views/todayHistory.vue')
   }
 ]
 
