@@ -16,6 +16,8 @@ import qs from 'qs'
 //引入 lodash
 import _ from 'lodash'
 Vue.prototype._ = _;
+//引入 animate.css
+import animated from 'animate.css'
 
 
 Vue.config.productionTip = false
@@ -30,7 +32,8 @@ import { NavBar,Button,Toast,NumberKeyboard,Tabbar,
         Image,Lazyload,Loading,Icon,ImagePreview,PullRefresh,Field, Tag
 
 } from 'vant'
-Vue.use(NavBar).use(Button).use(Toast).use(NumberKeyboard)
+Vue.use(animated)
+    .use(NavBar).use(Button).use(Toast).use(NumberKeyboard)
     .use(Tabbar).use(TabbarItem ).use(Swipe).use(SwipeItem)
     .use(NoticeBar).use(Panel).use(ContactCard)
     .use(ContactList).use(ContactEdit)
